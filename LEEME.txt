@@ -1,0 +1,34 @@
+KITTY PRYDE - Mod de Fabric para Minecraft Java 26.3 (codigo fuente)
+
+Requisitos: JDK 25, Minecraft 26.3, Fabric Loader >= 0.19.5, Fabric API 0.160.5+26.3.
+
+COMO COMPILAR
+  1. Genera un proyecto base en https://fabricmc.net/develop/template/ (Minecraft 26.3, Mojang mappings)
+     para obtener el gradle wrapper (gradlew / gradle/wrapper).
+  2. Copia dentro de ese proyecto: src/, build.gradle, gradle.properties y settings.gradle de este zip
+     (o solo src/ si prefieres conservar tus ficheros de build).
+  3. Ejecuta ./gradlew build  -> el .jar queda en build/libs/ (usa el que NO termina en -sources).
+  4. Pon el .jar en la carpeta mods junto con Fabric API.
+
+PODERES
+  - Cristal fásico (receta: 4 fragmentos de amatista + 1 perla de ender en cruz).
+  - Click derecho: intangibilidad 15 s (modo espectador; al acabar vuelves a tu modo anterior).
+  - Agachado + click derecho: atraviesas una pared, max 8 bloques, enfriamiento 2 s.
+  - /fase: termina la intangibilidad antes de tiempo.
+  - Si terminas dentro de un bloque solido sufres asfixia, como Kitty.
+
+TRAJE DE SHADOWCAT (incluido en el mod, no necesita resource pack)
+  - 4 piezas en la pestaña de Combate: Cinta, Chaqueta, Pantalones y Botas (azul y dorado).
+  - Receta sin forma: pieza de cuero del mismo tipo + tinte azul + tinte amarillo.
+  - Proteccion como el cuero. Texturas en src/main/resources/assets/kittypryde/textures.
+
+COMPILAR SIN INSTALAR NADA (GitHub Actions)
+  1. Crea una cuenta gratis en github.com y un repositorio nuevo (boton "New repository", ponle el nombre que quieras).
+  2. Descomprime este zip. En el repositorio pulsa "Add file > Upload files" y arrastra TODO el contenido
+     (carpeta src, build.gradle, gradle.properties, settings.gradle, .gitignore y la carpeta oculta .github).
+     Si tu sistema no te deja arrastrar .github, crea el archivo a mano: "Add file > Create new file",
+     escribe como nombre  .github/workflows/build.yml  y pega dentro el contenido de COMPILAR_GITHUB_build.yml.
+  3. Pulsa "Commit changes". Se abre solo la pestaña "Actions" y empieza a compilar (tarda unos minutos).
+  4. Cuando salga el check verde, entra en esa ejecucion y baja del apartado "Artifacts" el .zip.
+     Dentro esta el .jar: ese es el mod. Ponlo en la carpeta mods junto con Fabric API.
+  Si sale una X roja, abre el paso que fallo, copia el error y pasamelo para corregirlo.
